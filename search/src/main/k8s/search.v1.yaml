@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - image: gcr.io/istio-meilleur-ami-de-k8s/search:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
               path: /actuator/health
