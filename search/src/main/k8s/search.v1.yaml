@@ -31,7 +31,7 @@ spec:
         version: v1
     spec:
       containers:
-        - image: davinkevin/istio-best-friends-k8s/search:latest
+        - image: gcr.io/istio-meilleur-ami-de-k8s/search:latest
           imagePullPolicy: Never
           livenessProbe:
             httpGet:

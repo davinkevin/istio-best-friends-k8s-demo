@@ -17,4 +17,3 @@ echo "Building UI service"
 cd ui
 ./mvnw compile jib:dockerBuild
 kubectl apply -f src/main/k8s/ui.v1.yaml
-
