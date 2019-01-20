@@ -5,7 +5,7 @@ set -euo pipefail
 echo Running from $(pwd)
 
 echo "Setting the Auto-sidecar injection"
-kubectl label namespace default istio-injection=enabled
+kubectl --overwrite=true label namespace default istio-injection=enabled
 
 echo "Building Search service"
 cd search
