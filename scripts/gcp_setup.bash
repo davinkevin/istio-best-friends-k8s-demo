@@ -22,3 +22,6 @@ echo "Building UI service"
 cd ui
 ./mvnw compile jib:build
 kubectl apply -f src/main/k8s/ui.v1.yaml
+
+kubectl apply -f https://storage.googleapis.com/gke-release/istio/release/1.0.3-gke.0/stackdriver/stackdriver-tracing.yaml
+kubectl apply -f https://storage.googleapis.com/gke-release/istio/release/1.0.3-gke.0/stackdriver/stackdriver-logs.yaml
