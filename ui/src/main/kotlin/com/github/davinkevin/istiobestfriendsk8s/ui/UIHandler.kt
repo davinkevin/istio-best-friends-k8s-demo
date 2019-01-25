@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
+import java.time.ZonedDateTime.now
 
 /**
  * Created by kevin on 2019-01-13
@@ -26,6 +27,6 @@ class UIHandler(val search: SearchService, prop: UIProperties) {
 
     fun serve(serverRequest: ServerRequest) = search
             .search()
-            .map { it.copy(from = "ui ($version) => ${it.from}" ) }
+            .map { it.copy(from = "ui ($version) => ${it.from}", date = now() ) }
             .flatMap { ServerResponse.ok().syncBody(it) }
 }

@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - image: gcr.io/istio-meilleur-ami-de-k8s/ui:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: UI_VERSION
               value: v1
@@ -68,7 +68,7 @@ spec:
     spec:
       containers:
         - image: gcr.io/istio-meilleur-ami-de-k8s/ui:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: UI_VERSION
               value: v2
@@ -114,11 +114,11 @@ spec:
         - destination:
             host: ui
             subset: version-2-beta
-          weight: 50
+          weight: 10
         - destination:
             host: ui
             subset: version-1
-          weight: 50
+          weight: 90
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
