@@ -12,5 +12,5 @@ end
 # With header
 while true
     curl -qs istioandk8sbff -H 'version: beta' | jq '.' -C;
-    sleep 0.4
+    sleep 0.1
 end
