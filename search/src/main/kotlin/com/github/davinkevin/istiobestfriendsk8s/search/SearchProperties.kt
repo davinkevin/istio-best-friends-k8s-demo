@@ -10,4 +10,5 @@ import org.springframework.stereotype.Component
 @ConfigurationProperties("search")
 class SearchProperties {
     lateinit var version: String
+    lateinit var event: String
 }

@@ -33,6 +33,11 @@ spec:
       containers:
         - image: gcr.io/istio-meilleur-ami-de-k8s/search:latest
           imagePullPolicy: IfNotPresent
+          env:
+            - name: SEARCH_VERSION
+              value: v1
+            - name: SEARCH_EVENT
+              value: breizhcamp
           livenessProbe:
             httpGet:
               path: /actuator/health

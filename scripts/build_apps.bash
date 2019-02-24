@@ -8,12 +8,9 @@ echo "Setting the Auto-sidecar injection"
 kubectl --overwrite=true label namespace default istio-injection=enabled
 
 echo "Building Search service"
-cd search
-./mvnw compile jib:dockerBuild
-kubectl apply -f src/main/k8s/search.v1.yaml
-cd ..
+./mvnw -f search/pom.xml compile jib:build
+kubectl apply -f search/src/main/k8s/search.v1.yaml
 
 echo "Building UI service"
-cd ui
-./mvnw compile jib:dockerBuild
-kubectl apply -f src/main/k8s/ui.v1.yaml
+./mvnw -f ui/pom.xml compile jib:build
+kubectl apply -f ui/src/main/k8s/ui.v1.yaml
