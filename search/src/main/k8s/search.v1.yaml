@@ -37,7 +37,7 @@ spec:
             - name: SEARCH_VERSION
               value: v1
             - name: SEARCH_EVENT
-              value: breizhcamp
+              value: Breizhcamp
           livenessProbe:
             httpGet:
               path: /actuator/health
