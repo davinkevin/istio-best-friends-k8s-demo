@@ -2,6 +2,7 @@
 
 # Create the kiali dashboard
 kub port-forward service/kiali 20001:20001 -n istio-system
+open http://localhost:20001/kiali/console/
 
 # Standard
 while true
