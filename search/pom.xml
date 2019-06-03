@@ -103,7 +103,7 @@
                 <version>0.10.1</version>
                 <configuration>
                     <to>
-                        <image>gcr.io/istio-meilleur-ami-de-k8s/search:latest</image>
+                        <image>gcr.io/istio-csm/search:latest</image>
                     </to>
                 </configuration>
             </plugin>

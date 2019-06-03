@@ -30,7 +30,7 @@ spec:
         version: v1
     spec:
       containers:
-        - image: gcr.io/istio-meilleur-ami-de-k8s/ui:latest
+        - image: gcr.io/istio-csm/ui:latest
           imagePullPolicy: Always
           env:
             - name: UI_VERSION
@@ -68,7 +68,7 @@ spec:
         version: v2
     spec:
       containers:
-        - image: gcr.io/istio-meilleur-ami-de-k8s/ui:latest
+        - image: gcr.io/istio-csm/ui:latest
           imagePullPolicy: Always
           env:
             - name: UI_VERSION

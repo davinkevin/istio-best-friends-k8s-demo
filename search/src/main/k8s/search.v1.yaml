@@ -31,7 +31,7 @@ spec:
         version: v1
     spec:
       containers:
-        - image: gcr.io/istio-meilleur-ami-de-k8s/search:latest
+        - image: gcr.io/istio-csm/search:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: SEARCH_VERSION

@@ -107,7 +107,7 @@
                 <version>0.10.1</version>
                 <configuration>
                     <to>
-                        <image>gcr.io/istio-meilleur-ami-de-k8s/ui:latest</image>
+                        <image>gcr.io/istio-csm/ui:latest</image>
                     </to>
                 </configuration>
             </plugin>

@@ -5,9 +5,9 @@ set -euo pipefail
 echo Running from $(pwd)
 
 # Create the cluster with this command
-# gcloud beta container --project "istio-meilleur-ami-de-k8s" clusters create "istio-k8s-bff" --zone "us-central1-a" --username "admin" --cluster-version "1.11.7-gke.4" --machine-type "n1-standard-2" --image-type "COS" --disk-type "pd-standard" --disk-size "100" --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-stackdriver-kubernetes --no-enable-ip-alias --network "projects/istio-meilleur-ami-de-k8s/global/networks/default" --subnetwork "projects/istio-meilleur-ami-de-k8s/regions/us-central1/subnetworks/default" --addons HorizontalPodAutoscaling,HttpLoadBalancing --enable-autoupgrade --enable-autorepair
+# gcloud beta container --project "istio-csm" clusters create "istio-k8s-bff" --zone "us-central1-a" --username "admin" --cluster-version "1.12.7-gke.10" --machine-type "n1-standard-2" --image-type "COS" --disk-type "pd-standard" --disk-size "100" --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-stackdriver-kubernetes --no-enable-ip-alias --network "projects/istio-csm/global/networks/default" --subnetwork "projects/istio-csm/regions/us-central1/subnetworks/default" --addons HorizontalPodAutoscaling,HttpLoadBalancing --enable-autoupgrade --enable-autorepair
 # And connect to it
-# gcloud container clusters get-credentials istio-k8s-bff --zone us-central1-a --project istio-meilleur-ami-de-k8s
+# gcloud container clusters get-credentials istio-k8s-bff --zone us-central1-a --project istio-csm
 echo "Use my personal mail"
 # gcloud config set account foo.bar@gmail.com
 echo "create a role for my user in the cluster"
