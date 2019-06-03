@@ -16,7 +16,7 @@ kubectl create clusterrolebinding cluster-admin-binding \
                   --user=(gcloud config get-value core/account)
 
 curl -L https://git.io/getLatestIstio | sh -
-ls istio-1.1.0/install/kubernetes/helm/istio-init/files/crd*yaml | xargs -n1 -P 1 -I  @ kubectl apply -f @
+ls istio-1.1.7/install/kubernetes/helm/istio-init/files/crd*yaml | xargs -n1 -P 1 -I  @ kubectl apply -f @
 sleep 5
 kubectl apply -f istio-1.1.0/install/kubernetes/istio-demo.yaml
 
