@@ -37,7 +37,7 @@ spec:
             - name: SEARCH_VERSION
               value: v1
             - name: SEARCH_EVENT
-              value: "Paris Container Day"
+              value: "Voxxed Days Luxembourg"
           livenessProbe:
             httpGet:
               path: /actuator/health
