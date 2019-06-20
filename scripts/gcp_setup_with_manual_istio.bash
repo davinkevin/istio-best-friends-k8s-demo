@@ -6,13 +6,12 @@ echo Running from $(pwd)
 
 # Create the cluster with this command
 # gcloud beta container --project "istio-csm" clusters create "istio-k8s-bff" --zone "us-central1-a" --username "admin" --cluster-version "1.12.7-gke.10" --machine-type "n1-standard-2" --image-type "COS" --disk-type "pd-standard" --disk-size "100" --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-stackdriver-kubernetes --no-enable-ip-alias --network "projects/istio-csm/global/networks/default" --subnetwork "projects/istio-csm/regions/us-central1/subnetworks/default" --addons HorizontalPodAutoscaling,HttpLoadBalancing --enable-autoupgrade --enable-autorepair
-# And connect to it
-# gcloud container clusters get-credentials istio-k8s-bff --zone us-central1-a --project istio-csm
 
 curl -L https://git.io/getLatestIstio | sh -
-ls istio-1.1.7/install/kubernetes/helm/istio-init/files/crd*yaml | xargs -n1 -P 1 -I  @ kubectl apply -f @
+set ISTIO_FOLDER (ls | grep istio | tail -n 1)
+ls ${ISTIO_FOLDER}/install/kubernetes/helm/istio-init/files/crd*yaml | xargs -n1 -P 1 -I  @ kubectl apply -f @
 sleep 5
-kubectl apply -f istio-1.1.7/install/kubernetes/istio-demo.yaml
+kubectl apply -f ${ISTIO_FOLDER}/install/kubernetes/istio-demo.yaml
 
 echo "Setting the Auto-sidecar injection"
 kubectl --overwrite=true label namespace default istio-injection=enabled
