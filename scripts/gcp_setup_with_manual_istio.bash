@@ -9,9 +9,9 @@ echo Running from $(pwd)
 
 curl -L https://git.io/getLatestIstio | sh -
 set ISTIO_FOLDER (ls | grep istio | tail -n 1)
-ls ${ISTIO_FOLDER}/install/kubernetes/helm/istio-init/files/crd*yaml | xargs -n1 -P 1 -I  @ kubectl apply -f @
+ls $ISTIO_FOLDER/install/kubernetes/helm/istio-init/files/crd*yaml | xargs -n1 -P 1 -I  @ kubectl apply -f @
 sleep 5
-kubectl apply -f ${ISTIO_FOLDER}/install/kubernetes/istio-demo.yaml
+kubectl apply -f $ISTIO_FOLDER/install/kubernetes/istio-demo.yaml
 
 echo "Setting the Auto-sidecar injection"
 kubectl --overwrite=true label namespace default istio-injection=enabled
