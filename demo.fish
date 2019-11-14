@@ -7,7 +7,7 @@ open http://localhost:20001/kiali/console/
 # Standard
 while true
     curl -qs istioandk8sbff | jq '.' -C;
-    sleep 0.4
+    sleep 0.1
 end
 
 # With header
