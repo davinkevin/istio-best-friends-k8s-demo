@@ -31,7 +31,7 @@ class SearchHandler(prop: SearchProperties) {
     val event = prop.event
 
     fun serve(serverRequest: ServerRequest) = ok()
-            .syncBody(DemoMessage(event, "search ($version)"))
+            .bodyValue(DemoMessage(event, "search ($version)"))
 }
 
 data class DemoMessage(val hello: String, val from: String)

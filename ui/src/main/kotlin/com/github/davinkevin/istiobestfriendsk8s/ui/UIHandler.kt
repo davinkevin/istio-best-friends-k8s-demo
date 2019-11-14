@@ -28,5 +28,5 @@ class UIHandler(val search: SearchService, prop: UIProperties) {
     fun serve(serverRequest: ServerRequest) = search
             .search()
             .map { it.copy(from = "ui ($version) => ${it.from}", date = now() ) }
-            .flatMap { ServerResponse.ok().syncBody(it) }
+            .flatMap { ServerResponse.ok().bodyValue(it) }
 }
