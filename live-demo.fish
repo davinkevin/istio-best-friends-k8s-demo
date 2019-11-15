@@ -20,6 +20,8 @@ function kub_apply
   wait_and_clear
 end
 
+kub --overwrite=true label namespace default istio-injection=enabled
+kub apply -f search/src/main/k8s/search.v1.yaml > /dev/null
 kub apply -f ui/src/main/k8s/ui.v1.yaml > /dev/null
 clear
 
